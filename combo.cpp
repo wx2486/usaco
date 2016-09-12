@@ -6,36 +6,41 @@ LANG: C++11
 
 #include <iostream>
 #include <fstream>
-#include <unordered_set>
 #include <string>
+#include <unordered_set>
 
 using namespace std;
 
 const string PROG = "combo";
 
-void insert(unordered_set<int> &st, int n, int x)
+void calc(unordered_set<string> &st, int n)
 {
-    st.insert((x+2)%n);
-    st.insert((x+1)%n);
-    st.insert(x);
-    st.insert((x+n-1)%n);
-    st.insert((x+n-2)%n);
-}
-
-int calc(int n, int a, int b)
-{
-    unordered_set<int> st;
-    insert(st, n, a);
-    insert(st, n, b);
-    return n - st.size();
+    int a, b, c;
+    for (int i=-2; i<=2; i++)
+        for (int j=-2; j<=2; j++)
+            for (int k=-2; k<=2; k++)
+            {
+                int aa, bb, cc;
+                aa = (aa + i + n) % n;
+                bb = (bb + j + n) % n;
+                cc = (cc + k + n) % n;
+                string s = itoa(aa) + ' ' + itoa(bb) + ' ' + itoa(cc);
+                st.insert(s);
+            }
 }
 
 int main()
 {
     ofstream fout (PROG + ".out");
     ifstream fin (PROG + ".in");
+
     int n; fin >> n;
-    int a1, a2, a3, b1, b2, b3; fin >> a1 >> a2 >> a3 >> b1 >> b2 >> b3;
-    fout << (calc(n, a1, b1) * calc(n, a2, b2) * calc(n, a3, b3)) << endl;
+    unordered_set<string> st;
+    
+    calc(st, n);
+    calc(st, n);
+    
+    fout << st.size() << endl;
+
     return 0;
 }
