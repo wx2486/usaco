@@ -8,6 +8,7 @@ LANG: C++11
 #include <fstream>
 #include <string>
 #include <unordered_set>
+#include <cstdlib>
 
 using namespace std;
 
