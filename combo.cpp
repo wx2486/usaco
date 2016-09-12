@@ -12,6 +12,8 @@ LANG: C++11
 using namespace std;
 
 const string PROG = "combo";
+ofstream fout (PROG + ".out");
+ifstream fin (PROG + ".in");
 
 void calc(unordered_set<string> &st, int n)
 {
@@ -31,9 +33,6 @@ void calc(unordered_set<string> &st, int n)
 
 int main()
 {
-    ofstream fout (PROG + ".out");
-    ifstream fin (PROG + ".in");
-
     int n; fin >> n;
     unordered_set<string> st;
     
