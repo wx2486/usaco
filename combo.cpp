@@ -28,6 +28,7 @@ void calc(unordered_set<string> &st, int n)
                 cc = (cc + k + n) % n;
                 string s = to_string(aa) + ' ' + to_string(bb) + ' ' + to_string(cc);
                 st.insert(s);
+                cout << s << endl;
             }
 }
 
