@@ -23,9 +23,9 @@ void calc(unordered_set<string> &st, int n)
             for (int k=-2; k<=2; k++)
             {
                 int aa, bb, cc;
-                aa = (aa + i + 2*n) % n;
-                bb = (bb + j + 2*n) % n;
-                cc = (cc + k + 2*n) % n;
+                aa = (a + i + 2*n) % n;
+                bb = (b + j + 2*n) % n;
+                cc = (c + k + 2*n) % n;
                 string s = to_string(aa) + ' ' + to_string(bb) + ' ' + to_string(cc);
                 st.insert(s);
                 cout << s << endl;
