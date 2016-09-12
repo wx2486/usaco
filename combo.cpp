@@ -15,7 +15,7 @@ const string PROG = "combo";
 
 void calc(unordered_set<string> &st, int n)
 {
-    int a, b, c;
+    int a, b, c; fin >> a >> b >> c;
     for (int i=-2; i<=2; i++)
         for (int j=-2; j<=2; j++)
             for (int k=-2; k<=2; k++)
