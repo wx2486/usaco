@@ -8,7 +8,6 @@ LANG: C++11
 #include <fstream>
 #include <string>
 #include <unordered_set>
-#include <cstdlib>
 
 using namespace std;
 
@@ -27,7 +26,7 @@ void calc(unordered_set<string> &st, int n)
                 aa = (aa + i + n) % n;
                 bb = (bb + j + n) % n;
                 cc = (cc + k + n) % n;
-                string s = itoa(aa) + ' ' + itoa(bb) + ' ' + itoa(cc);
+                string s = to_string(aa) + ' ' + to_string(bb) + ' ' + to_string(cc);
                 st.insert(s);
             }
 }
