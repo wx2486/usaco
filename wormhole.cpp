@@ -66,7 +66,7 @@ int dig(vector<bool> picked, vector<int> pairs)
             if (pairs.size() == n)
             {
                 whjmp(pairs);
-                sum += check();
+                sum += !check();
             }
             else
                 sum += dig(picked, pairs);
