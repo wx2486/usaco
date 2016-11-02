@@ -22,7 +22,8 @@ vector<int> wjmp;
 
 void whjmp(vector<int> pairs)
 {
-    wjmp = new vector<int>(n);
+    wjmp.clear();
+    wjmp.assign(n, 0);
     for (int i=0; i<n; i+=2)
     {
         int a=pairs[i], b=pairs[i+1];
@@ -81,7 +82,8 @@ int main()
 {
     fin >> n;
     vector<int> x(n), y(n);
-    jmp = new vector<int>(n);
+    jmp.clear();
+    jmp.assign(n, 0);
     for (int i=0; i<n; i++) fin >> x[i] >> y[i];
     for (int i=0; i<n; i++)
     {
